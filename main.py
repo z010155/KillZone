@@ -34,7 +34,7 @@ if __name__ == "__main__":
         #Make sure blip is after this
         screen.fill(screen_colour)
 
-        pygame.draw.rect(screen,)
+        # pygame.draw.rect(screen,)
         manager.populateBlocks()
         for i in range(len(manager.blocks)):
             pygame.draw.rect(screen,(125,125,125),manager.blocks[i].rect)
