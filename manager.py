@@ -22,10 +22,19 @@ class Manager:
     def testing(self):
         for i in range (len(self.blocks)):
             print self.blocks[i].get_rect()
-    #Todo, each node should check if it's inside a block before being generated
+
     def populateNode(self):
         for i in range(len(self.nodes)):
-            print"hold"
+            for j in range(len(self.blocks)):
+                width = 8
+                height = 8
+                xpos = random.randrange(0, 1280 - width)
+                ypos = random.randrange(0, 640 - height)
+                #TODO the Node needs to be given a HELD enumeration still
+                self.nodes[i] = Node(xpos,ypos,width,height,0)
+                if self.blocks[j].rect.colliderect(self.nodes[i].rect):
+                    print "COLLISION"
+
 
 
 

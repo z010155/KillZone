@@ -25,7 +25,8 @@ if __name__ == "__main__":
 
     manager = Manager(args.node,args.block)
     manager.populateBlocks()
-    manager.testing()
+    #manager.testing()
+    manager.populateNode()
     while(not terminate):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -38,6 +39,9 @@ if __name__ == "__main__":
 
         for i in range(len(manager.blocks)):
             pygame.draw.rect(screen, (125, 125, 125), manager.blocks[i].rect)
+
+        for i in range(len(manager.nodes)):
+            pygame.draw.circle(screen,(0,0,0),(manager.nodes[i].rect[0],manager.nodes[i].rect[1]),manager.nodes[i].rect[2])
 
         pygame.display.flip()
         pygame.display.update()
