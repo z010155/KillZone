@@ -15,6 +15,12 @@ class Block:
         self.xpos = xpos
         self.ypos = ypos
 
+    def __str__(self):
+        return str(self.rect)
+
+    def __eq__(self, other):
+        return self.rect == other.rect
+
 class Node:
     def __init__(self,xpos,ypos,width,height,held):
     #held is enumeration for who is holding the node. Where is Enumeration base library?????
